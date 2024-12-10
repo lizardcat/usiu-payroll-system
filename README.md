@@ -1,7 +1,3 @@
-Here’s a professional and comprehensive `README.md` file tailored to your payroll system project:
-
----
-
 # **USIU-Africa Payroll System**
 
 ## **Overview**
@@ -41,8 +37,9 @@ This project aims to enhance efficiency, minimize manual errors, and provide a u
 ## **Setup Instructions**
 ### **Prerequisites**
 1. **Java Development Kit (JDK 21 or higher)**: Ensure Java is installed and set up on your system.
-2. **MySQL Server**: Set up the database to store payroll and employee information. I used MySQL Workbench.
-3. **Apache Maven**: For managing dependencies and building the application.
+2. **IDE (I used IntelliJ)**: I think this should work with any IDE, but who knows
+3. **MySQL Server**: Set up the database to store payroll and employee information. I used MySQL Workbench.
+4. **Apache Maven**: For managing dependencies and building the application.
 
 ### **Steps to Set Up**
 1. **Clone the Repository**
