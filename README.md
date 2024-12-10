@@ -98,16 +98,16 @@ This project aims to enhance efficiency, minimize manual errors, and provide a u
 ![Login page](usiu/images/login_page.png)
 
 ### **Dashboard**
-![Dashboard](usiu/images/dashboard_page.png)
+![Dashboard](usiu/images/main_dashboard.png)
 
 ### **Manage Employees**
-![Employee management](usiu/images/employee_management_page.png)
+![Employee management](usiu/images/manage_employees_page.png)
 
 ### **Manage Departments**
-![Department management](usiu/images/department_management_page.png)
+![Department management](usiu/images/manage_departments_page.png)
 
 ### **Manage Positions**
-![Position management](usiu/images/position_management_page.png)
+![Position management](usiu/images/manage_positions_page.png)
 
 ### **Payroll Calculation**
 ![Payroll calculation](usiu/images/payroll_calculations_page.png)
