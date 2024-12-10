@@ -50,7 +50,7 @@ This project aims to enhance efficiency, minimize manual errors, and provide a u
 2. **Set Up the Database**
     - Create a MySQL database and configure the connection details in `application.properties`:
       ```properties
-      spring.datasource.url=jdbc:mysql://localhost:3306/usiu_payroll
+      spring.datasource.url=jdbc:mysql://localhost:3306/usiu_payroll (assuming you name your schema usiu_payroll)
       spring.datasource.username=admin
       spring.datasource.password=admin
       ```
@@ -58,7 +58,7 @@ This project aims to enhance efficiency, minimize manual errors, and provide a u
    ```bash
    mvn install
    ```
-4. **Run the Application**
+4. **Run the Application** (Or just run PayrollApplication.java)
    ```bash
    mvn spring-boot:run
    ```
