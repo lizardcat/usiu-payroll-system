@@ -76,7 +76,7 @@ This project aims to enhance efficiency, minimize manual errors, and provide a u
 2. **Manage Employees**:
     - Add, edit, or delete employee profiles.
 3. **Calculate Payroll**:
-    - Navigate to the Payroll module, select an employee, and specify the month to compute payroll.
+    - Navigate to the Payroll module, select an employee, and specify the month to compute payroll. (This feature is currently not working as expected)
 4. **Generate Payslips**:
     - View payslips with a breakdown of salary, deductions, and net pay.
 5. **Manage Positions and Departments**:
@@ -95,25 +95,25 @@ This project aims to enhance efficiency, minimize manual errors, and provide a u
 ## **Screenshots**
 
 ### **Login Page**
-![Login page](images/login_page.png)
+![Login page](usiu/images/login_page.png)
 
 ### **Dashboard**
-![Dashboard](images/dashboard_page.png)
+![Dashboard](usiu/images/dashboard_page.png)
 
 ### **Manage Employees**
-![Employee management](images/employee_management_page.png)
+![Employee management](usiu/images/employee_management_page.png)
 
 ### **Manage Departments**
-![Department management](images/department_management_page.png)
+![Department management](usiu/images/department_management_page.png)
 
 ### **Manage Positions**
-![Position management](images/position_management_page.png)
+![Position management](usiu/images/position_management_page.png)
 
 ### **Payroll Calculation**
-![Payroll calculation](images/payroll_calculations_page.png)
+![Payroll calculation](usiu/images/payroll_calculations_page.png)
 
 ### **Payslip**
-![Sample payslip](images/payslip_sample.png)
+![Sample payslip](usiu/images/payslip_sample.png)
 
 ## **Future Enhancements**
 - Implement additional reporting features for payroll analytics.
