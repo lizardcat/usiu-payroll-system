@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>USIU-Africa Payroll System Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #0033a0; /* USIU-Africa Blue */
+        }
+        #navbarNav .nav-link {
+            color: #ffffff !important; /* Set text color to white */
+        }
+        #navbarNav .nav-link:hover {
+            color: #d1d1d1 !important; /* Slightly lighter color for hover effect */
+        }
+        .navbar-brand {
+            color: #ffffff; /* White to contrast the blue */
+            font-weight: bold;
+        }
+        .navbar-brand:hover {
+            color: #d1d1d1; /* Slightly lighter shade for hover effect */
+        }
+        .logout-button {
+            margin-left: auto;
+            margin-right: 10px;
+            background-color: #ffcd00; /* Bright yellow */
+            border-color: #ffcd00;
+            color: #0033a0; /* Dark Blue Text for contrast */
+            font-weight: bold;
+        }
+        .logout-button:hover {
+            background-color: #e6b800; /* Slightly darker yellow */
+            border-color: #e6b800;
+        }
+        .action-button {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            background-color: #009688; /* Material Design Teal */
+            border-color: #009688;
+            color: #ffffff;
+            font-weight: bold;
+            width: 100%;
+            padding: 15px;
+        }
+        .action-button:hover {
+            background-color: #00796b; /* Material Design Dark Teal */
+            border-color: #00796b;
+        }
+        .action-description {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img src="http://kenyanlife.info/wp-content/uploads/2016/06/usiu-300x300.jpeg" alt="USIU-Africa Logo" style="height: 80px; margin-right: 20px;">
+        <span style="color: #ffcd00;">USIU-Africa Payroll System</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Main Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/departments">Departments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/positions">Positions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/employees">Employees</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/payroll">Payroll Calculations</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Logout Button -->
+    <form th:action="@{/logout}" method="post" id="logoutForm" class="form-inline my-2 my-lg-0">
+        <button type="submit" class="btn logout-button">Logout</button>
+    </form>
+</nav>
+
+<div class="container mt-4">
+    <h1 class="my-4 text-center">USIU-Africa Payroll System Dashboard</h1>
+
+    <!-- Summary Widgets -->
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card bg-info text-white mb-4">
+                <div class="card-body">Total Employees: <span th:text="${totalEmployees}">0</span></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white mb-4">
+                <div class="card-body">Total Departments: <span th:text="${totalDepartments}">0</span></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-warning text-white mb-4">
+                <div class="card-body">Total Payroll Cost: KSh <span th:text="${totalPayrollCost}">0.00</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Action Buttons -->
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/departments" class="btn action-button">Manage Departments</a>
+            <p class="action-description text-center">Add, edit, or delete departments within the system.</p>
+        </div>
+        <div class="col-md-6">
+            <a href="/positions" class="btn action-button">Manage Positions</a>
+            <p class="action-description text-center">Add, update, or remove position information.</p>
+        </div>
+        <div class="col-md-6">
+            <a href="/employees" class="btn action-button">Manage Employees</a>
+            <p class="action-description text-center">Add new employees, update details, or manage employee data.</p>
+        </div>
+        <div class="col-md-6">
+            <a href="/payroll" class="btn action-button">Payroll Calculations</a>
+            <p class="action-description text-center">Calculate salaries, generate payslips, and manage payroll operations.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // You can use JavaScript to add an extra layer of confirmation for logging out
+    document.getElementById('logoutForm').addEventListener('submit', function(e) {
+        if (!confirm('Are you sure you want to log out?')) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

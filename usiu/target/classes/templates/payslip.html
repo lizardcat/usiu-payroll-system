@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Payslip - USIU-Africa Payroll System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+        .payslip-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            background-color: #0033a0;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <div class="payslip-container">
+        <h2 class="section-title">Payslip for Employee: <span th:text="${payslip.employee.firstName + ' ' + payslip.employee.lastName}"></span></h2>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount (KSh)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Base Salary</td>
+                <td th:text="${payslip.baseSalary}"></td>
+            </tr>
+            <tr>
+                <td>Housing Allowance (20% of Base Salary)</td>
+                <td th:text="${0.20 * payslip.baseSalary}"></td>
+            </tr>
+            <tr>
+                <td>Transport Allowance (10% of Base Salary)</td>
+                <td th:text="${0.10 * payslip.baseSalary}"></td>
+            </tr>
+            <tr>
+                <td>Medical Allowance (5% of Base Salary)</td>
+                <td th:text="${0.05 * payslip.baseSalary}"></td>
+            </tr>
+            <tr>
+                <td><strong>Total Allowances</strong></td>
+                <td th:text="${payslip.allowances}"></td>
+            </tr>
+            <tr>
+                <td>Performance Bonus</td>
+                <td th:text="${payslip.employee.performanceRating >= 4 ? 10000 : 5000}"></td>
+            </tr>
+            <tr>
+                <td>Attendance Bonus</td>
+                <td th:text="2000"></td>
+            </tr>
+            <tr>
+                <td><strong>Total Bonuses</strong></td>
+                <td th:text="${payslip.bonuses}"></td>
+            </tr>
+            <tr>
+                <td>PAYE (15% of Base Salary)</td>
+                <td th:text="${0.15 * payslip.baseSalary}"></td>
+            </tr>
+            <tr>
+                <td>NHIF Contribution</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>NSSF Contribution</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>Pension Contribution (5% of Base Salary)</td>
+                <td th:text="${0.05 * payslip.baseSalary}"></td>
+            </tr>
+            <tr>
+                <td><strong>Total Deductions</strong></td>
+                <td th:text="${payslip.deductions}"></td>
+            </tr>
+            <tr class="table-info">
+                <td><strong>Net Salary</strong></td>
+                <td th:text="${payslip.netSalary}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

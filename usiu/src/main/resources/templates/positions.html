@@ -1,0 +1,123 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Positions - USIU-Africa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #0033a0; /* USIU-Africa Blue */
+        }
+        #navbarNav .nav-link {
+            color: #ffffff !important; /* Set text color to white */
+        }
+
+        #navbarNav .nav-link:hover {
+            color: #d1d1d1 !important; /* Slightly lighter color for hover effect */
+        }
+        .navbar-brand {
+            color: #ffffff; /* White to contrast the blue */
+            font-weight: bold;
+        }
+        .navbar-brand:hover {
+            color: #d1d1d1; /* Slightly lighter shade for hover effect */
+        }
+        .action-button {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            background-color: #009688; /* Material Design Teal */
+            border-color: #009688;
+            color: #ffffff;
+            font-weight: bold;
+            width: 100%;
+            padding: 15px;
+        }
+        .action-button:hover {
+            background-color: #00796b; /* Material Design Dark Teal */
+            border-color: #00796b;
+        }
+        .action-description {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img src="http://kenyanlife.info/wp-content/uploads/2016/06/usiu-300x300.jpeg" alt="USIU-Africa Logo" style="height: 80px; margin-right: 20px;">
+        <span style="color: #ffcd00;">USIU-Africa Payroll System</span>
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Main Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/departments">Departments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/positions">Positions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/employees">Employees</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/payroll">Payroll Calculations</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container mt-4">
+    <h1 class="my-4 text-center">Manage Positions</h1>
+
+    <!-- Position Form -->
+    <form th:action="@{/positions/add}" th:method="post" th:object="${newPosition}" class="mb-4">
+        <div class="form-group">
+            <label for="title">Position Title</label>
+            <input type="text" class="form-control" id="title" th:field="*{title}" placeholder="Enter Position Title">
+        </div>
+        <div class="form-group">
+            <label for="baseSalary">Base Salary (KSh)</label>
+            <input type="number" class="form-control" id="baseSalary" th:field="*{baseSalary}" placeholder="Enter Base Salary">
+        </div>
+        <div class="form-group">
+            <label for="department">Department</label>
+            <select class="form-control" id="department" th:field="*{department.id}">
+                <option th:each="department : ${departments}"
+                        th:value="${department.id}"
+                        th:text="${department.name}">Department</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Position</button>
+    </form>
+
+
+    <!-- Position List -->
+    <h2 class="my-4">Current Positions</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Base Salary (KSh)</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="position : ${positions}">
+            <td th:text="${position.id}"></td>
+            <td th:text="${position.title}"></td>
+            <td th:text="${position.baseSalary}"></td>
+            <td>
+                <a th:href="@{/positions/delete/{id}(id=${position.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

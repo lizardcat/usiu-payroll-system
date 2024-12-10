@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - USIU-Africa Payroll System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #0033a0; /* USIU-Africa Blue */
+        }
+        #navbarNav .nav-link {
+            color: #ffffff !important;
+        }
+        #navbarNav .nav-link:hover {
+            color: #d1d1d1 !important;
+        }
+        .navbar-brand {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .navbar-brand:hover {
+            color: #d1d1d1;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .login-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #0033a0; /* USIU-Africa Blue */
+            margin-bottom: 20px;
+        }
+        .login-btn {
+            background-color: #ffcd00; /* Bright yellow for contrast */
+            border-color: #ffcd00;
+            color: #0033a0; /* Blue text for contrast */
+            font-weight: bold;
+            width: 100%;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .login-btn:hover {
+            background-color: #e6b800; /* Slightly darker yellow for hover */
+            border-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img src="http://kenyanlife.info/wp-content/uploads/2016/06/usiu-300x300.jpeg" alt="USIU-Africa Logo" style="height: 80px; margin-right: 20px;">
+        <span style="color: #ffcd00;">USIU-Africa Payroll System</span>
+    </a>
+</nav>
+
+<div class="container login-container">
+    <h2 class="login-title">Login to Your Account</h2>
+    <form th:action="@{/login}" th:method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+        </div>
+        <button type="submit" class="btn login-btn">Log In</button>
+    </form>
+</div>
+</body>
+</html>
