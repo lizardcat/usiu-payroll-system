@@ -79,19 +79,6 @@ The system automates payroll processes, including salary computations, statutory
    http://localhost:8080
    ```
 
-## **Usage**
-
-1. **Log In**:
-   - Admin credentials: `admin / password` (You can change these in `SecurityConfig` file)
-2. **Manage Employees**:
-   - Add, edit, or delete employee profiles.
-3. **Calculate Payroll**:
-   - Navigate to the Payroll module, select an employee, and specify the month to compute payroll.
-4. **Generate Payslips**:
-   - View payslips with a breakdown of salary, deductions, and net pay.
-5. **Manage Positions and Departments**:
-   - Add, edit, or remove job roles and organizational departments.
-
 ## **Future Enhancements**
 
 - Implement additional reporting features for payroll analytics.
